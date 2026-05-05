@@ -41,8 +41,8 @@ body {
 .prose th { background: #f3f4f6; font-weight: 600; padding: 0.5rem 0.75rem; border: 1px solid #d1d5db; text-align: left; }
 .prose td { padding: 0.5rem 0.75rem; border: 1px solid #d1d5db; }
 .prose tr:nth-child(even) { background: #f9fafb; }
-.prose blockquote { border-left: 4px solid #6366f1; padding-left: 1rem; color: #6b7280; margin: 1rem 0; font-style: italic; }
-.prose a { color: #6366f1; text-decoration: underline; }
+.prose blockquote { border-left: 4px solid #0d9488; padding-left: 1rem; color: #6b7280; margin: 1rem 0; font-style: italic; }
+.prose a { color: #0d9488; text-decoration: underline; }
 .prose strong { font-weight: 600; }
 .prose hr { border: none; border-top: 1px solid #e5e7eb; margin: 1.5rem 0; }
 

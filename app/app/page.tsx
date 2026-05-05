@@ -33,7 +33,7 @@ function parseReadme(raw: string): Section[] {
       const title = h2[1].trim();
       current = { id: slugify(title), title, content: "" };
       buf = [`## ${title}`];
-    } else {
+    } else if (!/^-{3,}$/.test(line.trim())) {
       buf.push(line);
     }
   }
@@ -60,7 +60,7 @@ export default function Home() {
       <main className="flex-1 overflow-y-auto px-6 py-8 md:px-12">
         <div className="max-w-4xl mx-auto prose">
           {sections.map((section) => (
-            <section key={section.id} id={section.id} className="mb-12 scroll-mt-6">
+            <section key={section.id} id={section.id}  className="mb-12 scroll-mt-6">
               <MarkdownContent content={section.content} />
             </section>
           ))}
