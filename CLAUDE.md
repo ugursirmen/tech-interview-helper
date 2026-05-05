@@ -4,9 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-This is a documentation-only repository — a comprehensive technical interview reference guide for software engineers. The entire content lives in `README.md` (1,200+ lines of Markdown).
-
-There is no application code, build system, or package manager. The `.gitignore` anticipates a possible future Next.js app but nothing has been scaffolded yet.
+This is a technical interview reference guide for software engineers. Content lives in `README.md` (1,200+ lines of Markdown). A Next.js web app is scaffolded at the repo root, rendering the README as a browsable single-page app.
 
 ## Content Structure
 
@@ -29,9 +27,28 @@ There is no application code, build system, or package manager. The `.gitignore`
 - Real-world examples throughout use a **fintech/payments domain** (transactions, balances, settlements).
 - Decision trees and Markdown tables are preferred for comparison/selection guidance.
 
-## If Adding a Web App
+## Project Structure
 
-The `.gitignore` is pre-configured for a Next.js project. If scaffolding one, the standard commands would be:
+```
+/                        # repo root = Next.js project root
+├── README.md            # source content (parsed at build/runtime)
+├── app/                 # Next.js app directory
+│   ├── page.tsx         # parses README.md via fs, renders sections
+│   ├── layout.tsx
+│   ├── globals.css
+│   └── components/
+│       ├── Sidebar.tsx
+│       ├── MarkdownContent.tsx
+│       └── MermaidDiagram.tsx
+├── public/
+├── out/                 # static export output
+├── next.config.ts
+└── package.json
+```
+
+`app/page.tsx` reads `README.md` from `process.cwd()` (repo root) and splits it into sections by `##` headings.
+
+## Web App Commands
 
 ```bash
 npm install

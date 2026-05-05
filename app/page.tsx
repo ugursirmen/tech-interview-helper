@@ -47,7 +47,7 @@ function parseReadme(raw: string): Section[] {
 }
 
 export default function Home() {
-  const readmePath = path.join(process.cwd(), "..", "README.md");
+  const readmePath = path.join(process.cwd(), "README.md");
   const raw = fs.readFileSync(readmePath, "utf-8");
   const sections = parseReadme(raw);
 
